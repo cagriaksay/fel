@@ -3,7 +3,7 @@
 **Deterministic Flux-Equality Cellular Automaton for Coherent Wave Dynamics**
 
 This repository contains the reference implementation of the FEL-CA model described in:
-> Aksay, C. "Coherent Wave Interference in a Deterministic Integer Cellular Automaton." *Complex Systems* (2025).
+> Aksay, C. "Coherent Wave Interference in a Deterministic Integer Cellular Automaton." (2025).
 
 ## Supplementary Videos
 
