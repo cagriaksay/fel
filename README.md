@@ -7,12 +7,18 @@ This repository contains the reference implementation of the FEL-CA model descri
 
 ## Supplementary Videos
 
-**Video S1: Random-Field Self-Organization** ([`random-field-relaxation.mov`](./videos/random-field-relaxation.mov))
+**Video S1: Random-Field Self-Organization**
+
+https://github.com/user-attachments/assets/a366af5c-79c8-46fe-af97-19d8e421bebd
+
 - Evolution from uniform random initialization showing emergence of long-lived localized flux packets
 - Demonstrates Wolfram Class IV–like dynamics with κ=0
 - 3D visualization of mesoscale structure formation and persistent coherent entities
 
-**Video S2: Two-Source Interference** ([`two-sine-interference-90-degrees-phase.mov`](./videos/two-sine-interference-90-degrees-phase.mov))
+**Video S2: Two-Source Interference** 
+
+https://github.com/user-attachments/assets/00a2da49-b9eb-45aa-b049-e06bdc6a7b9a
+
 - Coherent interference between two sources with Δφ = π/2 phase offset
 - Shows characteristic diagonal fringe patterns and deterministic superposition
 - 3D energy distribution evolution demonstrating wave-like behavior under integer arithmetic
