@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/00a2da49-b9eb-45aa-b049-e06bdc6a7b9a
 
 ## Overview
 
-The FEL-CA enforces the **Flux Equality Law (FEL)**: for any closed boundary, total flux entering equals total flux leaving. The **Stream–Cancel–Rotate (SCR)** rule implements this through:
+The FEL-CA enforces the **Flux Equality Law (FEL)**: for any closed boundary, net oriented flux crossing the boundary equals the change in total flux contained within it. The **Stream–Cancel–Rotate (SCR)** rule implements this through:
 1. **Stream**: Flux propagates weighted by normalized components
 2. **Cancel**: Opposing streams cancel to form a twist vector
 3. **Rotate**: Surviving flux rotates around the twist axis
