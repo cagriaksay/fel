@@ -125,9 +125,10 @@ python experiments/04_walking_boundary.py
 ### Experiment List
 1. **Single-Sine Propagation** - Coherent wave propagation
 2. **Two-Sine Interference** - Deterministic superposition
-3. **Conservation Metrics** - Long-term E(t) and H(t) stability
+3. **Random-Field Relaxation** - Self-organization from uniform random initialization
 4. **Walking-Boundary FEL** - Global flux equality verification
-5. **Dispersion Analysis** - ω(k) curves and phase error
+5. **Benchmarks** - Performance benchmarks and scaling analysis
+6. **Kappa Sweep** - Parameter sensitivity analysis
 
 
 ## License
