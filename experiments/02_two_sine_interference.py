@@ -491,6 +491,28 @@ def run_two_sine_experiment(
         plt.tight_layout()
         plt.savefig(output_path / 'screen_pattern.png', dpi=300, bbox_inches='tight')
         print(f"Saved: {output_path / 'screen_pattern.png'}")
+        
+        # Compute fringe visibility
+        pattern_data = pattern.T  # Same orientation as plotted
+        # Filter out background/low values to focus on actual pattern
+        non_zero = pattern_data[pattern_data > pattern_data.max() * 0.01]
+        if len(non_zero) > 0:
+            I_max = np.max(non_zero)
+            I_min = np.min(non_zero)
+            visibility = (I_max - I_min) / (I_max + I_min) if (I_max + I_min) > 0 else 0
+            print()
+            print(f"Fringe Visibility Analysis:")
+            print(f"  V = (I_max - I_min) / (I_max + I_min) = {visibility:.3f}")
+            print(f"  I_max = {I_max:.2e}")
+            print(f"  I_min = {I_min:.2e}")
+            print(f"  Interpretation:")
+            if visibility > 0.8:
+                print(f"    V > 0.8: Excellent coherence (comparable to laser interference)")
+            elif visibility > 0.5:
+                print(f"    V = 0.5-0.8: Good coherence")
+            else:
+                print(f"    V < 0.5: Partial coherence")
+            print()
     
     # Plot interference pattern evolution
     n_frames = min(9, len(interference_slices))

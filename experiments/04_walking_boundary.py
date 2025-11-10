@@ -420,15 +420,18 @@ def run_walking_boundary_experiment(
     for size in box_sizes:
         np.save(output_path / f'flux_box{size}.npy', flux_history[size])
     
-    # Plot maximum flux vs box size (single chart for paper)
-    fig, ax = plt.subplots(figsize=(8, 6))
-    max_fluxes = [np.max(np.abs(flux_history[size])) for size in box_sizes]
-    ax.semilogy(box_sizes, max_fluxes, 'o-', markersize=10, linewidth=2.5, color='blue', label='FEL violation')
-    ax.axhline(1e-6, color='orange', linestyle='--', linewidth=1.5, label='10⁻⁶ threshold', alpha=0.7)
-    ax.set_xlabel('Box Size (voxels per side)', fontsize=12)
-    ax.set_ylabel('Max |FEL Violation|', fontsize=12)
-    ax.set_title('FEL Conservation: Max Violation vs Boundary Scale', fontsize=13, fontweight='bold')
-    ax.legend(fontsize=11)
+    # Plot FEL violation timeseries (log scale) - single chart for paper
+    fig, ax = plt.subplots(figsize=(10, 6))
+    for size in box_sizes:
+        abs_flux = np.abs(flux_history[size]) + 1e-12  # Avoid log(0)
+        ax.semilogy(timesteps, abs_flux, label=f'{size}³', alpha=0.7)
+    ax.axhline(1e-8, color='g', linestyle='--', linewidth=1, label='10⁻⁸ (target)')
+    ax.axhline(1e-6, color='orange', linestyle='--', linewidth=1, label='10⁻⁶ (acceptable)')
+    ax.axhline(1e-4, color='r', linestyle='--', linewidth=1, label='10⁻⁴ (marginal)')
+    ax.set_xlabel(f'Time Step (after {warmup_steps}-step warmup)', fontsize=12)
+    ax.set_ylabel('|FEL Violation|', fontsize=12)
+    ax.set_title('FEL Violation: |IN(t) - OUT(t) - (ACT(t+1) - ACT(t))| (Log Scale)', fontsize=13, fontweight='bold')
+    ax.legend(ncol=2, fontsize=10)
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
     plt.savefig(output_path / 'walking_boundary.png', dpi=300, bbox_inches='tight')
