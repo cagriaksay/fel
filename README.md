@@ -77,7 +77,7 @@ magnitude = sim.get_magnitude()
 
 ```
 FEL/
-├── fel_ca/                 # Core simulation library
+├── felca/                  # Core simulation library
 │   ├── __init__.py
 │   ├── simulator.py        # Base FEL simulator (float)
 │   ├── simulator_int.py    # Integer (Q1.31) implementation
@@ -85,19 +85,27 @@ FEL/
 ├── experiments/            # Paper experiment scripts
 │   ├── 01_single_sine.py
 │   ├── 02_two_sine_interference.py
-│   ├── 03_conservation.py
+│   ├── 03_random_field_relaxation.py
 │   ├── 04_walking_boundary.py
-│   ├── 05_dispersion.py
-│   └── run_all.py
+│   ├── 05_benchmarks.py
+│   ├── 06_kappa_sweep.py
+│   ├── create_sine_drift_figure.py
+│   ├── run_all.py
+│   └── run_paper_experiments.py
 ├── viewers/                # Visualization scripts
 │   ├── view_kappa_sweep.py
 │   ├── view_relaxation.py
 │   └── view_two_sine.py
 ├── docs/                   # Documentation
-│   └── API.md
+│   ├── API.md
+│   └── QUICKSTART.md
+├── results/                # Experiment output
+├── videos/                 # Supplementary videos
 ├── requirements.txt
 ├── setup.py
 ├── LICENSE
+├── CONTRIBUTING.md
+├── STRUCTURE.md
 └── README.md
 ```
 
